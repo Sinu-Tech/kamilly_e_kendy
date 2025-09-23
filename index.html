@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kendy & Kamilly se Casam!</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Kendy & Kamilly</h1>
+            <p class="hero-subtitle">se casam em</p>
+            <div class="wedding-date">11 de Janeiro de 2026</div>
+            
+            <!-- Contagem Regressiva -->
+            <div class="countdown">
+                <div class="countdown-item">
+                    <span id="days" class="countdown-number">0</span>
+                    <span class="countdown-label">Dias</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="hours" class="countdown-number">0</span>
+                    <span class="countdown-label">Horas</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="minutes" class="countdown-number">0</span>
+                    <span class="countdown-label">Minutos</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="seconds" class="countdown-number">0</span>
+                    <span class="countdown-label">Segundos</span>
+                </div>
+            </div>
+            
+            <div class="scroll-indicator">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nossa História -->
+    <section id="nossa-historia" class="nossa-historia">
+        <div class="container">
+            <h2 class="section-title">Nossa História</h2>
+            <div class="historia-content">
+                <div class="historia-text">
+                    <p>Nossa jornada começou de forma especial, quando o Deus nos uniu em um momento perfeito. Desde o primeiro encontro, soubemos que havia algo especial entre nós.</p>
+                    
+                    <p>Ao longo dos anos, construímos uma base sólida de amor, confiança e cumplicidade. Cada momento compartilhado fortaleceu ainda mais nosso vínculo, e hoje estamos prontos para dar o próximo passo em nossa caminhada juntos.</p>
+                    
+                    <p>Queremos compartilhar este momento único com as pessoas que amamos. Sua presença em nosso casamento será o presente mais especial que poderíamos receber.</p>
+                </div>
+                <div class="historia-image">
+                    <img src="img/kamilyekendy.png" alt="Kamilly e Kendy" class="couple-photo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria de Fotos -->
+    <section id="galeria" class="galeria">
+        <div class="container">
+            <h2 class="section-title">Momentos Especiais</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="img/kamillykendy1.jpg" alt="Foto do casal 1">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="img/kamillykendy2.jpg" alt="Foto do casal 2">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="img/kamillykendy3.jpg" alt="Foto do casal 3">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="img/kamillykendy4.jpg" alt="Foto do casal 4">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="img/kamillykendy5.jpg" alt="Foto do casal 4">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="img/kamillykendy6.jpg" alt="Foto do casal 4">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" class="lightbox-content">
+        <div class="lightbox-nav">
+            <button class="lightbox-prev" onclick="changeImage(-1)">&#10094;</button>
+            <button class="lightbox-next" onclick="changeImage(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <!-- Detalhes do Evento -->
+    <section id="evento" class="evento">
+        <div class="container">
+            <h2 class="section-title">Detalhes do Evento</h2>
+            <div class="evento-details">
+                <div class="evento-item">
+                    <div class="evento-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="evento-info">
+                        <h3>Data</h3>
+                        <p>11 de Janeiro de 2026</p>
+                    </div>
+                </div>
+                <div class="evento-item">
+                    <div class="evento-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="evento-info">
+                        <h3>Horário</h3>
+                        <p>16:00h</p>
+                        <a href="https://calendar.app.google/6Em16R7q9H2PRKqC7" target="_blank" class="time-link">
+                            <i class="fas fa-external-link-alt"></i> Adicionar à agenda
+                        </a>
+                    </div>
+                </div>
+                <div class="evento-item">
+                    <div class="evento-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="evento-info">
+                        <h3>Local</h3>
+                        <p>Igreja Adventista do Sétimo Dia</p>
+                        <p>Campo do Brito, Sergipe</p>
+                        <a href="https://maps.google.com/?q=Igreja+Adventista+Campo+do+Brito+Sergipe" target="_blank" class="map-link">
+                            <i class="fas fa-external-link-alt"></i> Ver no Mapa
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP -->
+    <section id="rsvp" class="rsvp">
+        <div class="container">
+            <h2 class="section-title">Confirmação de Presença</h2>
+            <p class="rsvp-subtitle">Sua presença é muito importante para nós!</p>
+            
+            <form id="rsvp-form" class="rsvp-form">
+                <div class="form-group">
+                    <label for="nome">Nome Completo *</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="convidados">Número de Convidados *</label>
+                    <select id="convidados" name="convidados" required>
+                        <option value="">Selecione</option>
+                        <option value="1">1 pessoa</option>
+                        <option value="2">2 pessoas</option>
+                        <option value="3">3 pessoas</option>
+                        <option value="4">4 pessoas</option>
+                        <option value="5">5 ou mais pessoas</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="mensagem">Mensagem (opcional)</label>
+                    <textarea id="mensagem" name="mensagem" rows="4" placeholder="Deixe uma mensagem carinhosa para os noivos..."></textarea>
+                </div>
+                
+                <button type="submit" class="rsvp-button">
+                    <i class="fas fa-heart"></i>
+                    Confirmar Presença
+                </button>
+            </form>
+            
+            <div id="rsvp-success" class="rsvp-success" style="display: none;">
+                <i class="fas fa-check-circle"></i>
+                <h3>Confirmação Recebida!</h3>
+                <p>Obrigado por confirmar sua presença. Mal podemos esperar para celebrar conosco!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lista de Presentes -->
+    <section id="presentes" class="presentes">
+        <div class="container">
+            <h2 class="section-title">Lista de Presentes</h2>
+            <p class="presentes-subtitle">Sua presença já é o maior presente, mas se desejar nos presentear:</p>
+            
+            <div class="presentes-options">
+                
+                
+                <div class="presente-item">
+                    <div class="presente-icon">
+                        <i class="fas fa-piggy-bank"></i>
+                    </div>
+                    <h3>Contribuição</h3>
+                    <p>Ajude-nos a realizar nossos sonhos</p>
+                    <a href="#" class="presente-link">Contribuir</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="contato">
+        <div class="container">
+            <h2 class="section-title">Contato</h2>
+            <p class="contato-subtitle">Tem alguma dúvida? Entre em contato conosco!</p>
+            
+            <div class="contato-info">
+                <div class="contato-item">
+                    <i class="fas fa-phone"></i>
+                    <span>(79) 99999-9999</span>
+                </div>
+                <div class="contato-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>kendy.kamilly@email.com</span>
+                </div>
+                <div class="contato-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp: (79) 99999-9999</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Kendy & Kamilly. Feito com carinho para nosso dia especial.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+
