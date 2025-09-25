@@ -14,7 +14,7 @@ const galleryImages = [
 let currentImageIndex = 0;
 
 // Inicialização quando o DOM estiver carregado
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     initCountdown();
     initScrollIndicator();
     initRSVPForm();
@@ -22,6 +22,41 @@ document.addEventListener('DOMContentLoaded', function() {
     initAnimations();
     handleResize(); // Garante o tamanho correto das imagens da galeria no carregamento
     preloadImages(); // Preload das imagens da galeria
+});
+// Controle de Música de Fundo
+document.addEventListener('DOMContentLoaded', function () {
+    const music = document.getElementById('background-music');
+    const musicControl = document.getElementById('music-control');
+    const musicIcon = musicControl.querySelector('i');
+
+    music.volume = 0.2;// Define volume inicial em 20%
+
+    // Navegadores modernos bloqueiam o autoplay. A música só começa com a primeira interação do usuário.
+    function playMusic() {
+        music.play().then(() => {
+            musicIcon.classList.remove('fa-play');
+            musicIcon.classList.add('fa-pause');
+            // Remove o listener para não tocar de novo em outros cliques
+            document.body.removeEventListener('click', playMusic);
+        }).catch(error => {
+            console.log("Autoplay bloqueado. A música começará no clique do botão.");
+        });
+    }
+
+    // Tenta tocar a música na primeira interação do usuário com a página
+    document.body.addEventListener('click', playMusic, { once: true });
+
+    musicControl.addEventListener('click', function () {
+        if (music.paused) {
+            music.play();
+            musicIcon.classList.remove('fa-play');
+            musicIcon.classList.add('fa-pause');
+        } else {
+            music.pause();
+            musicIcon.classList.remove('fa-pause');
+            musicIcon.classList.add('fa-play');
+        }
+    });
 });
 
 // Contagem Regressiva
@@ -55,7 +90,7 @@ function initCountdown() {
 function initScrollIndicator() {
     const scrollIndicator = document.querySelector('.scroll-indicator');
     if (scrollIndicator) {
-        scrollIndicator.addEventListener('click', function() {
+        scrollIndicator.addEventListener('click', function () {
             document.querySelector('#nossa-historia').scrollIntoView({
                 behavior: 'smooth'
             });
@@ -68,7 +103,7 @@ function openLightbox(index) {
     currentImageIndex = index;
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
-    
+
     if (lightbox && lightboxImg && galleryImages[index]) {
         lightboxImg.src = galleryImages[index];
         lightbox.style.display = 'flex'; // Usar flex para centralizar
@@ -86,13 +121,13 @@ function closeLightbox() {
 
 function changeImage(direction) {
     currentImageIndex += direction;
-    
+
     if (currentImageIndex >= galleryImages.length) {
         currentImageIndex = 0;
     } else if (currentImageIndex < 0) {
         currentImageIndex = galleryImages.length - 1;
     }
-    
+
     const lightboxImg = document.getElementById('lightbox-img');
     if (lightboxImg) {
         // Adiciona um efeito suave de fade na troca de imagem
@@ -105,7 +140,7 @@ function changeImage(direction) {
 }
 
 // Eventos do Lightbox
-document.addEventListener('keydown', function(e) {
+document.addEventListener('keydown', function (e) {
     const lightbox = document.getElementById('lightbox');
     if (lightbox && lightbox.style.display === 'flex') {
         if (e.key === 'Escape') {
@@ -120,7 +155,7 @@ document.addEventListener('keydown', function(e) {
 
 const lightboxElement = document.getElementById('lightbox');
 if (lightboxElement) {
-    lightboxElement.addEventListener('click', function(e) {
+    lightboxElement.addEventListener('click', function (e) {
         if (e.target === this) {
             closeLightbox();
         }
@@ -132,22 +167,22 @@ function initRSVPForm() {
     const form = document.getElementById('rsvp-form');
     if (!form) return;
 
-    form.addEventListener('submit', function(e) {
+    form.addEventListener('submit', function (e) {
         e.preventDefault();
-        
+
         const nome = document.getElementById('nome').value.trim();
         const convidados = document.getElementById('convidados').value;
-        
+
         if (!nome) {
             showAlert('Por favor, preencha seu nome completo.', 'error');
             return;
         }
-        
+
         if (!convidados) {
             showAlert('Por favor, selecione o número de convidados.', 'error');
             return;
         }
-        
+
         showLoadingButton();
 
         // Simulação de envio bem-sucedido
@@ -185,7 +220,7 @@ function showAlert(message, type = 'info') {
     alert.className = `alert alert-${type}`;
     alert.textContent = message;
     document.body.appendChild(alert);
-    
+
     setTimeout(() => {
         alert.style.animation = 'slideOutRight 0.3s ease-out forwards';
         setTimeout(() => alert.remove(), 300);
@@ -210,8 +245,8 @@ function initSmoothScroll() {
 
 // Animações de entrada
 function initAnimations() {
-    const animatedElements = document.querySelectorAll('.section-title, .historia-text, .historia-image, .gallery-item, .evento-item, .presente-item, .rsvp-form, .contato-info');
-    
+    const animatedElements = document.querySelectorAll('.section-title, .historia-text, .historia-image, .gallery-item, .evento-item, .dress-code-card, .presente-item, .rsvp-form, .contato-info');
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
