@@ -14,7 +14,7 @@ Uma landing page elegante e interativa para o casamento de Kendy e Kamilly, com 
 - **Principal**: Verde Oliva (#556B2F)
 - **Secundárias**: 
   - Bege/Creme (#F5F5DC)
-  - Dourado Suave (#DAA520)
+  - Verde Escuro (#274207)
   - Branco (#FFFFFF)
   - Cinza Claro (#D3D3D3)
 
@@ -30,7 +30,7 @@ Uma landing page elegante e interativa para o casamento de Kendy e Kamilly, com 
 3. **Galeria de Fotos** - Momentos especiais com lightbox
 4. **Detalhes do Evento** - Data, horário e local
 5. **Confirmação de Presença (RSVP)** - Formulário interativo
-6. **Lista de Presentes** - Links para presentes
+6. **Lista de Presentes** - Links para presentes (nesse caso para o pix)
 7. **Contato** - Informações de contato
 8. **Rodapé** - Créditos e agradecimentos
 
@@ -52,8 +52,7 @@ casamento-kendy-kamilly/
 ├── js/
 │   └── script.js       # Funcionalidades JavaScript
 ├── img/
-│   ├── hero_image.jpg      # Imagem principal do hero
-│   └── gallery_image_1.jpg # Imagem da galeria
+│   ├── (imagens aqui)
 └── README.md           # Este arquivo
 ```
 
@@ -104,10 +103,6 @@ A página utiliza os seguintes recursos externos:
 - Font Awesome (ícones)
 
 Estes recursos são carregados via CDN e requerem conexão com a internet.
-
-## 📞 Suporte
-
-Para dúvidas ou personalizações adicionais, entre em contato através das informações fornecidas na seção de contato da página.
 
 ## 💝 Créditos
 
