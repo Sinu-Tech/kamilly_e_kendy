@@ -193,7 +193,7 @@ h1, h2, h3 {
 }
 
 .nossa-historia::before,
-.dress-code::before {
+.dress-code::before{
     content: '';
     position: absolute;
     top: 0;
@@ -202,7 +202,7 @@ h1, h2, h3 {
     height: 100%;
     background-image: url('../img/fundofolhasverdes.png'); /* Caminho para sua imagem */
     background-repeat: repeat;
-    opacity: 0.09; /* Opacidade bem baixa para ser sutil */
+    opacity: 0.15; /* Opacidade bem baixa para ser sutil */
     z-index: -1; /* Coloca o padrão atrás do conteúdo */
 }
 
